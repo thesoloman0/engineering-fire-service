@@ -1,0 +1,162 @@
+---
+const clients = [
+  { sl:1,  name:'DPS School',                    location:'Gaya, Bihar'           },
+  { sl:2,  name:'Model Thana',                   location:'Bettia, Bihar'         },
+  { sl:3,  name:'Model Thana',                   location:'Katihar, Bihar'        },
+  { sl:4,  name:'Hotel of Maa Tara',             location:'Patna, Bihar'          },
+  { sl:5,  name:'Green Home Developer',          location:'Patna, Bihar'          },
+  { sl:6,  name:'Munkya Construction',           location:'Patna, Bihar'          },
+  { sl:7,  name:'Hira Panna',                    location:'Patna, Bihar'          },
+  { sl:8,  name:'Universal Green Home Pvt Ltd',  location:'Patna, Bihar'          },
+  { sl:9,  name:'Kriti Sagar',                   location:'Patna, Bihar'          },
+  { sl:10, name:'Aron Health Care Pvt Ltd',      location:'Patna, Bihar'          },
+  { sl:11, name:'Sidhi Vinayak Hospital',        location:'Sahebganj, Jharkhand'  },
+  { sl:12, name:'Hotel Hill View',               location:'Sahebganj, Jharkhand'  },
+  { sl:13, name:'Dr Vijay Singh Hospital',       location:'Sahebganj, Jharkhand'  },
+  { sl:14, name:'Maa Tara Construction',         location:'Patna, Bihar'          },
+  { sl:15, name:'Jeevan Construction',           location:'Patna, Bihar'          },
+  { sl:16, name:'Vastu Vihar',                   location:'Patna, Bihar'          },
+  { sl:17, name:'Hospital Amrendra G',           location:'Patna, Bihar'          },
+  { sl:18, name:'Rida Engineering Consultants',  location:'Patna, Bihar'          },
+  { sl:19, name:'Ramgolia City Pvt Ltd',         location:'Patna, Bihar'          },
+  { sl:20, name:'Pulmen Buildicon Pvt Ltd',      location:'Patna, Bihar'          },
+  { sl:21, name:'Aroma Developer',               location:'Patna, Bihar'          },
+  { sl:22, name:'Dream Makan Developer',         location:'Patna, Bihar'          },
+  { sl:23, name:'Dev Builder',                   location:'Patna, Bihar'          },
+  { sl:24, name:'S.K Builder & Coloniner',       location:'Patna, Bihar'          },
+  { sl:25, name:'Adrash Developer',              location:'Patna, Bihar'          },
+  { sl:26, name:'Jeevan Construction',           location:'Patna, Bihar'          },
+  { sl:27, name:'Govinda Construction',          location:'Patna, Bihar'          },
+  { sl:28, name:'Green City (Satyandra Kr)',     location:'Patna, Bihar'          },
+  { sl:29, name:'Mundeshwari Buildicom Pvt',     location:'Patna, Bihar'          },
+  { sl:30, name:'Dreamhouse (B+G+6)',            location:'Patna, Bihar'          },
+  { sl:31, name:'Bhaavya Const (G+7)',           location:'Patna, Bihar'          },
+  { sl:32, name:'Jnx Cost (B+G+4)',             location:'Patna, Bihar'          },
+  { sl:33, name:'Nexgen Builder',                location:'Patna, Bihar'          },
+  { sl:34, name:'Rajeev G (Bahadurpur)',         location:'Patna, Bihar'          },
+  { sl:35, name:'Shreya Const (Shekhpura)',      location:'Patna, Bihar'          },
+  { sl:36, name:'Geetanjali Vatika Pvt Ltd',    location:'Patna, Bihar'          },
+  { sl:37, name:'Agrani Homes',                  location:'Patna, Bihar'          },
+  { sl:38, name:'Bazar Kolkata Retail Pvt Ltd', location:'Patna, Bihar'          },
+  { sl:39, name:'Dr Jaishwal',                   location:'Patna, Bihar'          },
+  { sl:40, name:'GBN Builder',                   location:'Patna, Bihar'          },
+  { sl:41, name:'HHPL Housing Clinic Pvt Ltd',  location:'Patna, Bihar'          },
+  { sl:42, name:'Nyazi Builder (Ali Nagar)',     location:'Patna, Bihar'          },
+  { sl:43, name:'Munkkya Construction Pvt Ltd', location:'Patna, Bihar'          },
+  { sl:44, name:'Geetanjali Real Teach Pvt Ltd',location:'Patna, Bihar'          },
+  { sl:45, name:'Ramest Infra Pvt Ltd',          location:'Patna, Bihar'          },
+  { sl:46, name:'Sai Ram (Near Gola Road)',      location:'Patna, Bihar'          },
+  { sl:47, name:'Arcon Project',                 location:'Patna, Bihar'          },
+  { sl:48, name:'MGR Const (Udayani)',           location:'Patna, Bihar'          },
+  { sl:49, name:'Sai Ram',                       location:'Patna, Bihar'          },
+  { sl:50, name:'Soni Kumari (Sahebganj)',       location:'Patna, Bihar'          },
+  { sl:51, name:'Sai Sampan',                    location:'Patna, Bihar'          },
+  { sl:52, name:'Sree Ganesh Sarwati Enclave',  location:'Patna, Bihar'          },
+];
+
+const half = Math.ceil(clients.length / 2);
+const col1 = clients.slice(0, half);
+const col2 = clients.slice(half);
+---
+
+<section id="clients" class="clients-section">
+  <div class="container">
+    <div class="section-tag">Our Track Record</div>
+    <h2 class="section-title">PROJECTS <span class="accent">COMPLETED</span></h2>
+    <div class="divider"></div>
+    <p class="clients-intro reveal">
+      We have successfully installed fire protection systems across 52+ buildings, hospitals,
+      hotels, schools, and residential complexes in Bihar and Jharkhand.
+    </p>
+
+    <div class="tables-grid reveal">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th class="sl-col">SL</th><th>Organisation</th><th>Location</th></tr>
+          </thead>
+          <tbody>
+            {col1.map(c => (
+              <tr>
+                <td class="sl-col">{c.sl}</td>
+                <td>{c.name}</td>
+                <td class="loc">{c.location}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th class="sl-col">SL</th><th>Organisation</th><th>Location</th></tr>
+          </thead>
+          <tbody>
+            {col2.map(c => (
+              <tr>
+                <td class="sl-col">{c.sl}</td>
+                <td>{c.name}</td>
+                <td class="loc">{c.location}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.clients-section {
+  background: var(--black);
+  padding-block: clamp(60px, 10vh, 100px);
+}
+.clients-intro {
+  max-width: 600px;
+  font-size: 1rem; color: var(--silver); line-height: 1.75;
+  margin-bottom: 48px;
+}
+.tables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.table-wrap {
+  border: 1px solid var(--steel);
+  overflow: hidden;
+  overflow-x: auto;
+}
+table {
+  width: 100%; border-collapse: collapse;
+  min-width: 340px;
+}
+thead tr { background: var(--red); }
+thead th {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: #fff; padding: 12px 16px; text-align: left;
+  white-space: nowrap;
+}
+tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  transition: background .15s;
+}
+tbody tr:hover { background: rgba(200,21,27,.07); }
+tbody td {
+  padding: 10px 16px;
+  font-size: .86rem; color: #ccc;
+}
+.sl-col {
+  color: var(--red) !important;
+  font-weight: 700; width: 44px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .9rem !important;
+}
+.loc { color: var(--silver) !important; white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .tables-grid { grid-template-columns: 1fr; }
+}
+</style>

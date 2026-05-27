@@ -1,0 +1,67 @@
+---
+const reasons = [
+  { icon:'⚡', title:'24×7 Availability',       desc:'Round-the-clock service for refilling, maintenance and emergency response. We are always on call.' },
+  { icon:'🏆', title:'9+ Years of Expertise',   desc:'Established in 2016, we bring nearly a decade of hands-on fire safety experience across Bihar and Jharkhand.' },
+  { icon:'👷', title:'50+ Professionals',        desc:'A large, qualified team across different domains ensures every project is handled by the right experts.' },
+  { icon:'🏥', title:'Diverse Sector Experience',desc:'52+ projects across schools, hospitals, hotels, government buildings and residential complexes.' },
+  { icon:'✅', title:'End-to-End Solutions',     desc:'From design and supply to installation, training and maintenance — we handle every aspect of fire safety.' },
+  { icon:'📍', title:'Bihar Based & Local',      desc:'Locally rooted in Patna with faster response times, regional knowledge and deep community trust.' },
+];
+---
+
+<section id="why" class="why-section">
+  <div class="container">
+    <div class="section-tag">Why Choose Us</div>
+    <h2 class="section-title">BUILT ON <span class="accent">TRUST</span></h2>
+    <div class="divider"></div>
+
+    <div class="why-grid">
+      {reasons.map((r, i) => (
+        <article class="why-card reveal" style={`transition-delay:${i * 0.07}s`}>
+          <span class="why-icon">{r.icon}</span>
+          <h3 class="why-title">{r.title}</h3>
+          <p class="why-desc">{r.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.why-section {
+  background: linear-gradient(135deg, #0d0202 0%, #1a0808 50%, #0d0202 100%);
+  padding-block: clamp(60px, 10vh, 100px);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.why-card {
+  padding: 34px 26px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(200,21,27,.2);
+  position: relative;
+  transition: border-color .3s, background .3s;
+}
+.why-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 40px; height: 3px;
+  background: var(--red);
+}
+.why-card:hover {
+  border-color: rgba(200,21,27,.5);
+  background: rgba(255,255,255,.05);
+}
+.why-icon { font-size: 2.1rem; margin-bottom: 16px; display: block; }
+.why-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 10px;
+}
+.why-desc { font-size: .86rem; color: var(--silver); line-height: 1.65; }
+
+@media (max-width: 900px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .why-grid { grid-template-columns: 1fr; } }
+</style>

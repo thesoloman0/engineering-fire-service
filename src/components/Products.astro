@@ -1,0 +1,58 @@
+---
+const products = [
+  { icon:'🧯', name:'ABC Fire Extinguisher',      desc:'Multi-purpose dry chemical powder for Class A, B & C fires.' },
+  { icon:'❄️', name:'CO₂ Extinguisher',           desc:'Clean, residue-free — ideal for electrical & server rooms.'   },
+  { icon:'🤖', name:'Automatic Fire Extinguisher', desc:'Sprinkler-tech self-activating unit for ATM centres & server rooms. No external support needed.' },
+  { icon:'🧼', name:'Clean Agent Extinguisher',    desc:'Zero residue — perfect for sensitive equipment & data centres.' },
+  { icon:'🌊', name:'AFFF Foam Extinguisher',      desc:'Mechanical foam for liquid (Class B) & solid fuel fires.' },
+  { icon:'📦', name:'Fire Modular System',          desc:'HFC-227 suppression modules for total flooding protection.' },
+  { icon:'🔊', name:'Smoke Detectors & Alarms',    desc:'Ionisation and photoelectric detectors, heat sensors & alarm panels.' },
+  { icon:'🪧', name:'Fire Safety Signage',          desc:'Standard fire safety boards, emergency lights & evacuation markers.' },
+];
+---
+<section id="products" class="products-section">
+  <div class="container">
+    <div class="section-tag">What We Supply</div>
+    <h2 class="section-title">FIRE SAFETY <span class="accent">PRODUCTS</span></h2>
+    <div class="divider"></div>
+
+    <div class="products-grid reveal">
+      {products.map(p => (
+        <article class="product-card">
+          <span class="product-icon">{p.icon}</span>
+          <h3 class="product-name">{p.name}</h3>
+          <p class="product-desc">{p.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.products-section {
+  background: var(--charcoal);
+  padding-block: clamp(60px, 10vh, 100px);
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.product-card {
+  background: var(--steel); padding: 28px 22px;
+  border: 1px solid rgba(255,255,255,.05);
+  transition: border-color .3s, transform .3s;
+}
+.product-card:hover { border-color: var(--red); transform: translateY(-4px); }
+.product-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+.product-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .95rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 8px;
+}
+.product-desc { font-size: .82rem; color: var(--silver); line-height: 1.55; }
+
+@media (max-width: 1000px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .products-grid { grid-template-columns: 1fr; } }
+</style>

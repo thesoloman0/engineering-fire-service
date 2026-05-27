@@ -1,0 +1,105 @@
+---
+const features = [
+  { icon: '🏗️', title: 'Installation',   desc: 'Turnkey fire system installation in buildings, hospitals & industries.' },
+  { icon: '🔧', title: 'Maintenance',    desc: '24×7 refilling and maintenance for all fire fighting equipment.'       },
+  { icon: '📋', title: 'Consultancy',    desc: 'Expert contractor & consultant for fire suppression & protection.'     },
+  { icon: '🎓', title: 'Training',       desc: 'Fire awareness training and drills to keep your teams prepared.'       },
+];
+---
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="section-tag">Who We Are</div>
+    <h2 class="section-title">YOUR FIRE <span class="accent">SAFETY</span> PARTNER</h2>
+    <div class="divider"></div>
+
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>
+          Engineering Fire Service Corporation has been operating since <strong>2016</strong>, based in Patna, Bihar.
+          We are a leading supplier and installer of comprehensive fire protection systems — covering all types of manual
+          and automatic fire extinguishers, clean agent systems, fire modular units, and more.
+        </p>
+        <p>
+          Our team of <strong>50+ qualified professionals</strong> is dedicated to delivering the best quality
+          products and achieving utmost customer satisfaction. We co-ordinate closely with clients to deliver
+          user-specified fire fighting and protection services reliably and on time.
+        </p>
+        <p>
+          We also provide Fire Safety Signboards, Emergency Evacuation Plans, Emergency Lighting, and
+          all-round fire protection consultancy — acting as both Contractor and Consultant for all types
+          of fire fighting services across Bihar and Jharkhand.
+        </p>
+        <div class="gstin-badge">
+          <span class="gstin-label">GSTIN</span>
+          <span class="gstin-val">10AAGFE0681H1ZW</span>
+        </div>
+      </div>
+
+      <div class="about-features">
+        {features.map(f => (
+          <div class="feat-card">
+            <span class="feat-icon">{f.icon}</span>
+            <h3 class="feat-title">{f.title}</h3>
+            <p class="feat-desc">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-section {
+  background: var(--charcoal);
+  padding-block: clamp(60px, 10vh, 100px);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.about-text { display: flex; flex-direction: column; gap: 18px; }
+.about-text p { font-size: 1.02rem; line-height: 1.85; color: #ccc; }
+.about-text strong { color: var(--white); }
+
+.gstin-badge {
+  display: inline-flex; gap: 12px; align-items: center;
+  background: var(--steel); padding: 10px 20px;
+  border-left: 3px solid var(--red); margin-top: 8px;
+}
+.gstin-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--red);
+}
+.gstin-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .95rem; letter-spacing: .08em; color: var(--white);
+}
+
+.about-features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+}
+.feat-card {
+  background: var(--steel); padding: 28px 22px;
+  border-left: 3px solid var(--red);
+  transition: background .2s;
+}
+.feat-card:hover { background: #333; }
+.feat-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.feat-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .95rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 8px;
+}
+.feat-desc { font-size: .84rem; color: var(--silver); line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .about-features { grid-template-columns: 1fr; }
+}
+</style>

@@ -1,0 +1,71 @@
+---
+const services = [
+  { num:'01', icon:'💧', name:'Fire Suppression System',    desc:'Complete design, supply and installation using clean agents, foam, CO₂ and dry chemical powder for total coverage.' },
+  { num:'02', icon:'🔔', name:'Fire Alarm System',          desc:'Advanced alarm systems with smoke detectors, heat detectors, manual call points and control panels.' },
+  { num:'03', icon:'🚿', name:'Hydrant & Sprinkler System', desc:'Design and installation for complete building coverage — ideal for commercial and residential complexes.' },
+  { num:'04', icon:'🧯', name:'Fire Extinguisher Supply',   desc:'ABC, CO₂, Foam, Water CO₂, AFFF and Dry Chemical Powder — both manual and automatic variants.' },
+  { num:'05', icon:'🔄', name:'Refilling & Maintenance',    desc:'24×7 on-call refilling, inspection and maintenance for all fire fighting equipment with safety reports.' },
+  { num:'06', icon:'🚨', name:'Emergency Planning',         desc:'Evacuation plan creation, emergency lighting, fire safety signage and fire awareness training programs.' },
+];
+---
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">OUR CORE <span class="accent">SERVICES</span></h2>
+    <div class="divider"></div>
+
+    <div class="services-grid">
+      {services.map((s, i) => (
+        <article class="service-card reveal" style={`transition-delay:${i * 0.07}s`}>
+          <span class="service-num">{s.num}</span>
+          <span class="service-icon">{s.icon}</span>
+          <h3 class="service-name">{s.name}</h3>
+          <p class="service-desc">{s.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.services-section {
+  background: var(--black);
+  padding-block: clamp(60px, 10vh, 100px);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.service-card {
+  background: var(--charcoal);
+  padding: 38px 30px;
+  position: relative; overflow: hidden;
+  transition: transform .3s, background .2s;
+}
+.service-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: var(--red);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s;
+}
+.service-card:hover { transform: translateY(-4px); background: #1f1f1f; }
+.service-card:hover::after { transform: scaleX(1); }
+
+.service-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.8rem; color: rgba(200,21,27,.14);
+  position: absolute; top: 14px; right: 20px; line-height: 1;
+}
+.service-icon { font-size: 2.3rem; margin-bottom: 18px; display: block; }
+.service-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem; font-weight: 700;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 12px;
+}
+.service-desc { font-size: .87rem; color: var(--silver); line-height: 1.65; }
+
+@media (max-width: 900px)  { .services-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px)  { .services-grid { grid-template-columns: 1fr; } }
+</style>
